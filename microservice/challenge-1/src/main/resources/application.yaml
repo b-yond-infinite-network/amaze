@@ -1,0 +1,41 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: jrx
+  datasource:
+    username: postgres
+    password: root
+    url: jdbc:postgresql://localhost:5432/ussd-service
+    driver-class-name: org.postgresql.Driver
+    initialization-mode: always
+    hikari:
+      minimumIdle: 5
+      maximumPoolSize: 20
+      idleTimeout: 30000
+      poolName: pool
+      maxLifetime: 2000000
+      connectionTimeout: 30000
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+        useServerPrepStmts: true
+  jpa:
+    show-sql: true
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true
+    database-platform: org.hibernate.dialect.PostgreSQL94Dialect
+    properties:
+      hibernate:
+        default_schema: public
+        show_sql: true
+        format_sql: true
+  jackson:
+    default-property-inclusion: non_null
+  output:
+    ansi:
+      enabled: always

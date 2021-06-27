@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "9b24c58b-0fb8-4747-b21c-ec73f3bf732c",
+		"name": "Challenge 1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "save bus",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJqNkpnVTBpSFB1bFVKS2ExZ2ZyRWxIVW5tQ20zSE5XRnF4SWZxZ1AwOXNrIn0.eyJleHAiOjE2MjQ3NTUzODcsImlhdCI6MTYyNDc1NTA4NywianRpIjoiNzE2MGE1MWEtYzJiNS00M2U3LTkzNDUtMWMxMjhkNDhkMTY1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo3MzAxL2F1dGgvcmVhbG1zL3N1cGVybWFya2V0IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImRjYjU2MzhjLTlmMjUtNGFjZS04YWRlLWY3ODk4YWYwZWRhMCIsInR5cCI6IkJlYXJlciIsImF6cCI6InZhYWRpbi1kYXNoYm9hcmQiLCJzZXNzaW9uX3N0YXRlIjoiODA0YjU4M2MtYWNlYi00NWQwLThmNzEtZDQzNmJjODU4NmMxIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoidXNlcjEifQ.wCsUhtv9awZOqqD5BUkCEGaWZgLj_hc4RYnLVabawaOh0k1oi82POG532cEbJPvrEh3eNopnWfdLeQqNHb09kxHIIw7dkl_hzVtDqVkr42z1Z5k5kJFpq6UmN5BI84r_Nt-zKxv7ob2HmOVRMski1hUUsV_6wY8VjRcPX-y2yOXxzpsFEiod2w3ctXVjQV7jtgwqsVka3vkbbpStodpWkeWkxHNiBP9QqKOorWFPOGxm8O_AwKCOCNqgM3r05MLTwRjU8MZueg4Efjw-Jg1louFdfe5WJ7FGuQp1HKnDe_QS1TZTb7fYP90bYXnHSJ0qQOIURZpu0xeK1BjPysu5PA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"chasseNumber\": 4453645624341,\n  \"capacity\": 142,\n  \"model\": \"GM\",\n  \"make\": \"Ford\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/bus",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"bus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save driver",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJqNkpnVTBpSFB1bFVKS2ExZ2ZyRWxIVW5tQ20zSE5XRnF4SWZxZ1AwOXNrIn0.eyJleHAiOjE2MjQ3NTUzODcsImlhdCI6MTYyNDc1NTA4NywianRpIjoiNzE2MGE1MWEtYzJiNS00M2U3LTkzNDUtMWMxMjhkNDhkMTY1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo3MzAxL2F1dGgvcmVhbG1zL3N1cGVybWFya2V0IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImRjYjU2MzhjLTlmMjUtNGFjZS04YWRlLWY3ODk4YWYwZWRhMCIsInR5cCI6IkJlYXJlciIsImF6cCI6InZhYWRpbi1kYXNoYm9hcmQiLCJzZXNzaW9uX3N0YXRlIjoiODA0YjU4M2MtYWNlYi00NWQwLThmNzEtZDQzNmJjODU4NmMxIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoidXNlcjEifQ.wCsUhtv9awZOqqD5BUkCEGaWZgLj_hc4RYnLVabawaOh0k1oi82POG532cEbJPvrEh3eNopnWfdLeQqNHb09kxHIIw7dkl_hzVtDqVkr42z1Z5k5kJFpq6UmN5BI84r_Nt-zKxv7ob2HmOVRMski1hUUsV_6wY8VjRcPX-y2yOXxzpsFEiod2w3ctXVjQV7jtgwqsVka3vkbbpStodpWkeWkxHNiBP9QqKOorWFPOGxm8O_AwKCOCNqgM3r05MLTwRjU8MZueg4Efjw-Jg1louFdfe5WJ7FGuQp1HKnDe_QS1TZTb7fYP90bYXnHSJ0qQOIURZpu0xeK1BjPysu5PA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"firstName\": \"tony\",\n  \"lastName\": \"johnson\",\n  \"socialSecurityNumber\": 987567456\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/driver",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"driver"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save schedule",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"dayOfWeek\": \"MONDAY\",\n  \"scheduleDate\": \"12/06/2020\",\n  \"startTime\": \"08:00\",\n  \"finishTime\": \"20:00\",\n  \"bus\": 4453645624341,\n  \"driver\": 987567456\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/schedule",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"schedule"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get bus scheduler details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJqNkpnVTBpSFB1bFVKS2ExZ2ZyRWxIVW5tQ20zSE5XRnF4SWZxZ1AwOXNrIn0.eyJleHAiOjE2MjQ3NTUzODcsImlhdCI6MTYyNDc1NTA4NywianRpIjoiNzE2MGE1MWEtYzJiNS00M2U3LTkzNDUtMWMxMjhkNDhkMTY1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo3MzAxL2F1dGgvcmVhbG1zL3N1cGVybWFya2V0IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImRjYjU2MzhjLTlmMjUtNGFjZS04YWRlLWY3ODk4YWYwZWRhMCIsInR5cCI6IkJlYXJlciIsImF6cCI6InZhYWRpbi1kYXNoYm9hcmQiLCJzZXNzaW9uX3N0YXRlIjoiODA0YjU4M2MtYWNlYi00NWQwLThmNzEtZDQzNmJjODU4NmMxIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoidXNlcjEifQ.wCsUhtv9awZOqqD5BUkCEGaWZgLj_hc4RYnLVabawaOh0k1oi82POG532cEbJPvrEh3eNopnWfdLeQqNHb09kxHIIw7dkl_hzVtDqVkr42z1Z5k5kJFpq6UmN5BI84r_Nt-zKxv7ob2HmOVRMski1hUUsV_6wY8VjRcPX-y2yOXxzpsFEiod2w3ctXVjQV7jtgwqsVka3vkbbpStodpWkeWkxHNiBP9QqKOorWFPOGxm8O_AwKCOCNqgM3r05MLTwRjU8MZueg4Efjw-Jg1louFdfe5WJ7FGuQp1HKnDe_QS1TZTb7fYP90bYXnHSJ0qQOIURZpu0xeK1BjPysu5PA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/bus/4453645624341?dayOfWeek=MONDAY&pageIndex=0&pageSize=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"bus",
+						"4453645624341"
+					],
+					"query": [
+						{
+							"key": "dayOfWeek",
+							"value": "MONDAY"
+						},
+						{
+							"key": "pageIndex",
+							"value": "0"
+						},
+						{
+							"key": "pageSize",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get driver scheduler details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJqNkpnVTBpSFB1bFVKS2ExZ2ZyRWxIVW5tQ20zSE5XRnF4SWZxZ1AwOXNrIn0.eyJleHAiOjE2MjQ3NTUzODcsImlhdCI6MTYyNDc1NTA4NywianRpIjoiNzE2MGE1MWEtYzJiNS00M2U3LTkzNDUtMWMxMjhkNDhkMTY1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo3MzAxL2F1dGgvcmVhbG1zL3N1cGVybWFya2V0IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImRjYjU2MzhjLTlmMjUtNGFjZS04YWRlLWY3ODk4YWYwZWRhMCIsInR5cCI6IkJlYXJlciIsImF6cCI6InZhYWRpbi1kYXNoYm9hcmQiLCJzZXNzaW9uX3N0YXRlIjoiODA0YjU4M2MtYWNlYi00NWQwLThmNzEtZDQzNmJjODU4NmMxIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoidXNlcjEifQ.wCsUhtv9awZOqqD5BUkCEGaWZgLj_hc4RYnLVabawaOh0k1oi82POG532cEbJPvrEh3eNopnWfdLeQqNHb09kxHIIw7dkl_hzVtDqVkr42z1Z5k5kJFpq6UmN5BI84r_Nt-zKxv7ob2HmOVRMski1hUUsV_6wY8VjRcPX-y2yOXxzpsFEiod2w3ctXVjQV7jtgwqsVka3vkbbpStodpWkeWkxHNiBP9QqKOorWFPOGxm8O_AwKCOCNqgM3r05MLTwRjU8MZueg4Efjw-Jg1louFdfe5WJ7FGuQp1HKnDe_QS1TZTb7fYP90bYXnHSJ0qQOIURZpu0xeK1BjPysu5PA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/driver/987567456?dayOfWeek=MONDAY&pageIndex=0&pageSize=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"driver",
+						"987567456"
+					],
+					"query": [
+						{
+							"key": "dayOfWeek",
+							"value": "MONDAY"
+						},
+						{
+							"key": "pageIndex",
+							"value": "0"
+						},
+						{
+							"key": "pageSize",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

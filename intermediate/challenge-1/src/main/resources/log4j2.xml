@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+
+    <Properties>
+        <Property name="PATH">logs</Property>
+        <Property name="APPLICATION_NAME">bus-drivers-shifts-service</Property>
+        <Property name="ROLLING_DATE_PATTERN">%d{dd-MM-yyyy}-%i</Property>
+        <Property name="SPRING_PATTERN">%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd HH:mm:ss.SSS}} %highlight{${LOG_LEVEL_PATTERN:-%5p}}{FATAL=red blink, ERROR=red, WARN=yellow bold, INFO=green, DEBUG=green bold, TRACE=blue} %style{${sys:PID}}{magenta} [%15.15t] %style{%-40.40C{1.}}{cyan} : %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}</Property>
+        <Property name="LOG_PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} %p - [%15.15t] %c %L : %m%n%ex</Property>
+    </Properties>
+
+    <Appenders>
+        <!-- Console Appender -->
+        <Console name="CONSOLE_APPENDER" target="SYSTEM_OUT" follow="true">
+            <PatternLayout pattern="${SPRING_PATTERN}"/>
+        </Console>
+
+        <!-- Rolling Files Appender -->
+        <RollingFile name="FILE_APPENDER" fileName="${PATH}/${APPLICATION_NAME}.log"
+                     filePattern="${PATH}/rolling/${APPLICATION_NAME}-${ROLLING_DATE_PATTERN}.log.zip" append="true">
+            <PatternLayout pattern="${SPRING_PATTERN}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="50 MB"/>
+            </Policies>
+        </RollingFile>
+
+        <!--Rolling ERROR Files Appender-->
+        <RollingFile name="ERROR_FILE_APPENDER" fileName="${PATH}/${APPLICATION_NAME}-ERROR.log"
+                     filePattern="${PATH}/rolling/${APPLICATION_NAME}-ERROR-${ROLLING_DATE_PATTERN}.log.zip"
+                     append="true">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="50 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="CONSOLE_APPENDER" level="INFO"/>
+            <AppenderRef ref="FILE_APPENDER" level="INFO"/>
+            <AppenderRef ref="ERROR_FILE_APPENDER" level="ERROR"/>
+        </Root>
+    </Loggers>
+
+</Configuration>

@@ -1,0 +1,1 @@
+I chose https://github.com/xxfast/jaxrs-reminder-app, and I was start refactor it based on how I can see the monolithic application

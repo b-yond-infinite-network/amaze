@@ -1,0 +1,64 @@
+server:
+  port: 8088
+  http2:
+    enabled: true
+
+spring:
+  application:
+    name: bus-drivers-shifts-service
+  datasource:
+    username: postgres
+    password: root
+    url: jdbc:postgresql://localhost:5432/shifts-service-db
+    driver-class-name: org.postgresql.Driver
+    data: classpath*:schema.sql
+    initialization-mode: always
+    hikari:
+      minimumIdle: 5
+      maximumPoolSize: 20
+      idleTimeout: 30000
+      poolName: pool
+      maxLifetime: 2000000
+      connectionTimeout: 30000
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+        useServerPrepStmts: true
+  jpa:
+    show-sql: true
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true
+    database-platform: org.hibernate.dialect.PostgreSQL94Dialect
+    properties:
+      hibernate:
+        default_schema: shifts_service
+        show_sql: true
+        format_sql: true
+  jackson:
+    default-property-inclusion: non_null
+  output:
+    ansi:
+      enabled: always
+
+logging:
+  config: src/main/resources/log4j2.xml
+  file:
+    name: logs/${spring.application.name}.log
+
+keycloak:
+  auth-server-url: http://localhost:7301/auth
+  realm: master
+  resource: bus-drivers-shifts-service
+  public-client: true
+  security-constraints:
+    - authRoles: employee
+      securityCollections:
+        - patterns: /bus/*
+        - patterns: /driver/*
+    - authRoles: manager
+      securityCollections:
+        - patterns: /scheduler/*
+  enabled: false
